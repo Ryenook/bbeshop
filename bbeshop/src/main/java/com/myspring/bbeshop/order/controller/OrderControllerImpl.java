@@ -168,10 +168,18 @@ public class OrderControllerImpl extends BaseController implements OrderControll
 			orderVO.setCard_pay_month(receiverMap.get("card_pay_month"));
 			orderVO.setPay_order_hp_num(receiverMap.get("pay_order_hp_num"));
 			orderVO.setOrder_hp(order_hp);
+			
+			// 기본값 배송준비중
+//			orderVO.setDelivery_state("delivery_prepared");
+			
 			myOrderList.set(i, orderVO);
 
 		}
+		
+		// 입력 정보 전달 하면서 주문데이터 추가
 		orderService.addNewOrder(myOrderList);
+		
+		// 주문 후 쇼핑 카트 개수 재설정
 		mav.addObject("myOrderInfo", receiverMap);
 		mav.addObject("myOrderList", myOrderList);
 		return mav;

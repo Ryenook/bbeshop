@@ -271,7 +271,7 @@
 																			<c:otherwise>
 																				<!-- 주문완료 option 선택 -->
 																				<option value="delivery_prepared">배송준비중</option>
-																				<option value="주문완료" selected>주문완료</option>
+																				<option value="주문오류" selected>주문오류</option>
 																				<option value="delivering">배송중</option>
 																				<option value="finished_delivering">배송완료</option>
 																				<option value="cancel_order">주문취소</option>

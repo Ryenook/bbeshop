@@ -410,13 +410,12 @@
 					<!-- 결제방법 선택 -->
 			
 					<!-- 결제하기-->	
-					<a name="btn_process_pay_order" onClick="fn_process_pay_order()" 
-						class="btn btn-lg btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mt-5 mb-2 bg-success bg-opacity-10">결제하기</a>
+					<a  class="btn btn-lg btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mt-5 mb-2 bg-success bg-opacity-10"
+							onClick="fn_process_pay_order()">결제하기</a>
 
 					<!-- 쇼핑계속하기 메인페이지로 이동한다-->
-					<a href="${contextPath}/main/main.do"
-						class="btn btn-lg btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mt-5 mb-2 bg-success bg-opacity-10">
-						쇼핑 계속하기</a>	
+					<a class="btn btn-lg btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mt-5 mb-2 bg-success bg-opacity-10"
+							href="${contextPath}/main/main.do" > 쇼핑 계속하기</a>	
 				</div>
 			</form>		
 		</div>

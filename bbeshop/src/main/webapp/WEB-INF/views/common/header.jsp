@@ -210,6 +210,8 @@
 	<header class="py-3 mb-3 border-bottom sticky-top bg-body">
 		<div class="container-fluid d-grid gap-3 align-items-center justify-content-center"
 			style="grid-template-columns: 1fr 2fr;">
+			
+			<!-- 카테고리별  -->
 			<div class="dropdown">
 				<a href="#"
 					class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle"
@@ -231,35 +233,56 @@
 						href="${contextPath}/goods/menuGoods.do?menuGoods=유아용">유아용</a></li>
 				</ul>
 			</div>
+			<!-- 카테고리별  -->
 
+			
 			<div class="d-flex align-items-center">
-				<form class="w-100 me-3" role="search" name="frmSearch"
-					action="${contextPath}/goods/searchGoods.do">
-					<input type="text small" name="searchWord" id="searchWord"
-						class="form-control" onKeyUp="keywordSearch()" placeholder="검색..."
-						aria-label="Search"> <input name="search" type="submit"
-						id="searchInputWithLabel" class="d-none"> <label
-						class="samll d-flex align-items-center px-2 pe-2"
-						for="searchInputWithLabel" style="cursor: pointer;"> </label>
+				
+				<!-- 검색 -->
+				<form class="w-100 me-3" role="search" name="frmSearch" action="${contextPath}/goods/searchGoods.do">
+					<div class="input-group">
+						<input type="text small" name="searchWord" id="searchWord" class="form-control " 
+								onKeyUp="keywordSearch()" placeholder="검색..." aria-label="Search" > 
+						<button class="btn btn-outline-secondary " type="submit" id="searchButton">
+							<img alt="검색" src="${contextPath}/resources/image/logo/logo_im.png"  style="width: 50px; height: 50px;" > 
+						</button>
+					</div>
+					
+					<input name="search" type="submit" id="searchInputWithLabel" class="d-none"> 
+					<label class="samll d-flex align-items-center px-2 pe-2"
+						for="searchInputWithLabel" style="cursor: pointer;"> 
+					</label>
+					
+					<div id="suggest" class="d-none">
+						<ul class="keywordSearchList dropdown-menu rounded-0 shadow border-0 px-2 pb-3 show position-absolute top-100 "
+								 id="suggestList" style="left: 35%; margin-top: -25px;">
+							<div id="innerDivForSuggestList"></div>
+						</ul>
+					</div>
+					
 				</form>
-
+				<!-- 검색 -->
+				
+				
+				
+				
+				
 				<ul class="no-marker">
 					<c:choose>
 						<c:when test="${isLogOn == true and not empty memberInfo}">
-							<li><a class="dropdown-item"
-								href="${contextPath}/member/logout.do">로그아웃</a></li>|
-       						<li><a class="dropdown-item"
-								href="${contextPath}/main/main.do"> <img alt="홈"
-									src="${contextPath}/resources/image/bbeshop_home.png"></a></li>
+							<li><a class="dropdown-item" href="${contextPath}/member/logout.do">로그아웃</a></li>|
+       						<li><a class="dropdown-item" href="${contextPath}/main/main.do"> 
+									<img alt="홈" src="${contextPath}/resources/image/bbeshop_home.png"></a></li>
 
 							<div class="flex-shrink-0 dropdown">
-								<a href="#"
-									class="d-block link-dark text-decoration-none dropdown-toggle"
-									data-bs-toggle="dropdown" aria-expanded="false"> <img
-									src="${contextPath}/resources/image/logo/Bbeshop.png" alt="mdo"
-									width="32" height="32" class="rounded-circle">
-								</a>
+								<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+									data-bs-toggle="dropdown" aria-expanded="false"> 
+									<img src="${contextPath}/resources/image/logo/Bbeshop.png" alt="mdo"
+											width="32" height="32" class="rounded-circle"></a>
+								
+								
 								<c:choose>
+									<%-- 관리자일때 --%>
 									<c:when test="${memberInfo.memberId == 'cccc'}">
 										<div class="dropdown-menu text-small shadow">
 											<li><a href="${contextPath}/cart/myCartList.do"
@@ -270,32 +293,40 @@
 												class="dropdown-item">bbeshop관리</a>
 										</div>
 									</c:when>
+									<%-- 관리자일때 --%>
+									
+									
+									<%-- 일반회원일때 --%>
 									<c:otherwise>
 										<ul class="dropdown-menu text-small shadow">
-											<li><a class="dropdown-item"
-												href="${contextPath}/mypage/listMyOrderHistory.do">마이쁘#</a></li>
-											<li><a class="dropdown-item"
-												href="${contextPath}/mypage/myDetailInfo.do"> <img
-													alt="내정보"
-													src="${contextPath}/resources/image/bbeshop_my.png"></a></li>
-											<li><a class="dropdown-item"
-												href="${contextPath}/cart/myCartList.do"> <img
-													alt="장바구니"
-													src="${contextPath}/resources/image/bbeshop_cart.png"></a></li>
+											<li>
+												<a class="dropdown-item" href="${contextPath}/mypage/listMyOrderHistory.do">마이쁘#</a>
+											</li>
+											<li>
+												<a class="dropdown-item" href="${contextPath}/mypage/myDetailInfo.do"> 
+													<img alt="내정보" src="${contextPath}/resources/image/bbeshop_my.png"></a>
+											</li>
+											<li>
+												<a class="dropdown-item" href="${contextPath}/cart/myCartList.do"> 
+													<img alt="장바구니" src="${contextPath}/resources/image/bbeshop_cart.png"></a>
+											</li>
 										</ul>
 									</c:otherwise>
+									<%-- 일반회원일때 --%>
+									
 								</c:choose>
 							</div>
 						</c:when>
+						
+						<%-- 공통 --%>
 						<c:otherwise>
-							<li><a class="dropdown-item"
-								href="${contextPath}/member/loginForm.do">로그인</a></li>|
-        					<li><a class="dropdown-item"
-								href="${contextPath}/member/memberForm.do">회원가입</a></li>|
-     					    <li><a class="dropdown-item"
-								href="${contextPath}/main/main.do"> <img alt="홈"
-									src="${contextPath}/resources/image/bbeshop_home.png"></a></li>
+							<li><a class="dropdown-item" href="${contextPath}/member/loginForm.do">로그인</a></li>|
+        					<li><a class="dropdown-item" href="${contextPath}/member/memberForm.do">회원가입</a></li>|
+     					    <li><a class="dropdown-item" href="${contextPath}/main/main.do"> 
+								<img alt="홈" src="${contextPath}/resources/image/bbeshop_home.png"></a></li>
 						</c:otherwise>
+						<%-- 공통  --%>
+						
 					</c:choose>
 				</ul>
 

@@ -75,14 +75,12 @@
 											<div
 												class="shadow-sm p-4 mt-3 rounded border border-light d-flex justify-content-between">
 												<div class="d-flex flex-column gap-4">
-													<p class="text-secondary fw-bold mb-0">
+													<p class="bg-primary-subtle text-emphasis-primary fw-bold small" style="Width:150px"> 주문상태 : 
 														<!-- 배송정보에 따른 표시 -->
 														<c:choose>
-															<c:when
-																test="${item.delivery_state=='delivery_prepared' }">배송준비중</c:when>
+															<c:when test="${item.delivery_state=='delivery_prepared' }">배송준비중</c:when>
 															<c:when test="${item.delivery_state=='delivering' }">배송중</c:when>
-															<c:when
-																test="${item.delivery_state=='finished_delivering' }">배송완료</c:when>
+															<c:when test="${item.delivery_state=='finished_delivering' }">배송완료</c:when>
 															<c:when test="${item.delivery_state=='cancel_order' }">주문취소</c:when>
 															<c:when test="${item.delivery_state=='returning_goods' }">반품중</c:when>
 															<c:when test="${item.delivery_state=='exchange_goods' }">교환중</c:when>
@@ -146,12 +144,12 @@
 
 																	<c:when
 																		test="${item.delivery_state=='delivery_prepared'}">
-																		<!-- 배송준비완료일때 -->
+																		<!-- 배송준비중일때 -->
 																		<button
 																			class="btn btn-sm border-main rounded-0 small d-block my-2"
 																			onClick="fn_edit_order('${item.order_id}','cancel')"
 																			style="width: 150px;">주문취소</button>
-																		<!-- 배송준비완료일때 -->
+																		<!-- 배송준비중일때 -->
 																	</c:when>
 
 																	<c:when

@@ -30,7 +30,7 @@
 				},
 				success : function(data, textStatus) {
 					if (data.trim() == 'add_success') {
-						alert("장바구니에 추가되엇습니다.");
+						alert("장바구니에 추가 되었습니다.");
 					} else if (data.trim() == 'already_existed') {
 						alert("이미 카트에 등록된 상품입니다.");
 					}
