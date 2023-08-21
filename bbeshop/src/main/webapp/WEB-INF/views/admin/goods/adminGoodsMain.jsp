@@ -139,7 +139,7 @@
 
 													<span>파일선택</span> <input name='main_image_fake'
 													class="file_fake form-control rounded-0" type="text"
-													placeholder="main.png로 변경후 업로드해주세요." readonly tabindex="-1">
+													placeholder="main.png or jpg로 변경후 업로드해주세요." readonly tabindex="-1">
 
 												</label>
 												<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -161,7 +161,7 @@
 													
 													<input name='detail_image1_fake'
 													class="file_fake form-control rounded-0" type="text"
-													placeholder="detail1.png로 변경후 업로드해주세요." readonly
+													placeholder="detail1.png or jpg로 변경후 업로드해주세요." readonly
 													tabindex="-1">
 												</label>
 												<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -183,7 +183,7 @@
 													
 													<input name='detail_image2_fake'
 													class="file_fake form-control rounded-0" type="text"
-													placeholder="detail2.png로 변경후 업로드해주세요." readonly
+													placeholder="detail2.png or jpg로 변경후 업로드해주세요." readonly
 													tabindex="-1">
 												</label>
 												<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -299,7 +299,7 @@
 																<input
 																name='main_image_fake'
 																class="file_fake form-control rounded-0" type="text"
-																value="main.png" placeholder="main.png로 변경후 업로드해주세요."
+																value="main.png" placeholder="main.png or jpg로 변경후 업로드해주세요."
 																readonly tabindex="-1">
 															</label>
 															<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -324,7 +324,7 @@
 																<input name='detail_image1_fake'
 																class="file_fake form-control rounded-0" type="text"
 																value="detail1.png"
-																placeholder="detail1.png로 변경후 업로드해주세요." readonly
+																placeholder="detail1.png or jpg로 변경후 업로드해주세요." readonly
 																tabindex="-1">
 															</label>
 															<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -348,7 +348,7 @@
 																<input name='detail_image2_fake'
 																class="file_fake form-control rounded-0" type="text"
 																value="detail2.png"
-																placeholder="detail2.png로 변경후 업로드해주세요." readonly
+																placeholder="detail2.png or jpg로 변경후 업로드해주세요." readonly
 																tabindex="-1">
 															</label>
 															<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -406,9 +406,9 @@ function filesToFackFilesInput(label){
 		//name값에 따른 파일이름을 가져와 대조한다.
 		let files = this.files[0].name;
 		if(
-			(file_fake.name == "main_image_fake") && (files == "main.png")||
-		    (file_fake.name == "detail_image1_fake") && (files == "detail1.png")||
-			(file_fake.name == "detail_image2_fake") && (files == "detail2.png")){
+			(file_fake.name == "main_image_fake") && (files == "main.png" || files == "main.jpg")||
+		    (file_fake.name == "detail_image1_fake") && (files == "detail1.png" || files == "detail1.jpg" )||
+			(file_fake.name == "detail_image2_fake") && (files == "detail2.png" ||files == "detail2.jpg")){
 			//정해진 파일이름으로 업로드했을때 value값을 반영하고
 			file_fake.value = files;
 		}else{

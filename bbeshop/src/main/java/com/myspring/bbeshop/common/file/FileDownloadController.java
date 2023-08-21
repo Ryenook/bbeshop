@@ -81,7 +81,7 @@ public class FileDownloadController {
 		File image = new File(filePath);
 
 		if (image.exists()) {
-			Thumbnails.of(image).size(121, 154).outputFormat("png").toOutputStream(out);
+			Thumbnails.of(image).size(121, 154).outputFormat("*").toOutputStream(out);
 		}
 
 		// 파일크기 설정
