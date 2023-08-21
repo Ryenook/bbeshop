@@ -45,27 +45,27 @@
 					<div>
 
 						<!-- 검색 - 오늘 -->
-						<a href="javascript:search_order_history('today')"
+						<a href="javascript:search_order_history('today')" style="color:black;"
 							class="badge rounded-pill btn mb-2 rounded-0 border-main samll ">오늘</a>
 
 						<!-- 검색 - 1개월 -->
-						<a href="javascript:search_order_history('one_month')"
+						<a href="javascript:search_order_history('one_month')" style="color:black;"
 							class="badge rounded-pill btn mb-2 rounded-0 border-main samll active">
 							최근 1개월</a>
 
 						<!-- 검색 - 2개월 -->
-						<a href="javascript:search_order_history('two_month')"
-							class="badge rounded-pill btn mb-2 rounded-0 border-main samll two_month">
+						<a href="javascript:search_order_history('two_month')" style="color:black;"
+							class="badge rounded-pill btn mb-2 rounded-0 border-main samll two_month ">
 							최근 2개월</a>
 
 						<!-- 검색 - 3개월 -->
-						<a href="javascript:search_order_history('three_month')"
-							class="badge rounded-pill btn mb-2 rounded-0 border-main samll three_month">
+						<a href="javascript:search_order_history('three_month')" style="color:black;"
+							class="badge rounded-pill btn mb-2 rounded-0 border-main samll three_month ">
 							최근 3개월 </a>
 
 						<!-- 검색 - 6개월 -->
-						<a href="javascript:search_order_history('six_month')"
-							class="badge rounded-pill btn mb-2 rounded-0 border-main samll six_month">
+						<a href="javascript:search_order_history('six_month')" style="color:black;"
+							class="badge rounded-pill btn mb-2 rounded-0 border-main samll six_month ">
 							최근 6개월</a> 
 				</div>
 			</div>
@@ -380,7 +380,7 @@
 
 
 
-	//버튼식 상품조회
+	//버튼식 조회
 	//onclick할때 같이 가져오는 fixedSearchPeriod값과함께 adminOrderMain 재요청
 	//해당 값은 자바소스를 거쳐 지정된 기간에 맞는 정보만 select되어 뿌려진다.
 	function search_order_history(fixedSearchPeriod) {
@@ -395,7 +395,7 @@
 		formObj.submit();
 	}
 	
-	//버튼식 상품조회 badge url에 따른 style변경
+	//버튼식 조회 badge url에 따른 style변경
 	if (window.location.href.includes("fixedSearchPeriod")) {
 		const badges = document.querySelectorAll(".badge");
 		for (b of badges){ 

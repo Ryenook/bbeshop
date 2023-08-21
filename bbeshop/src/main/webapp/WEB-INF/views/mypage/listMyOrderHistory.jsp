@@ -13,23 +13,23 @@
 				<form method="post">
 
 					<!-- 검색 - 오늘 -->
-					<a href="javascript:search_order_history('today')"
-						class="badge rounded-pill btn mb-2 rounded-0 border-main active ">오늘</a>
+					<a href="javascript:search_order_history('today')" style="color:black;"
+						class="badge rounded-pill btn mb-2 rounded-0 border-main ">오늘</a>
 					<!-- 검색 - 1개월 -->
-					<a href="javascript:search_order_history('one_month')" name="one_month"
+					<a href="javascript:search_order_history('one_month')" style="color:black;"
 						class="badge rounded-pill btn mb-2 rounded-0 border-main active">최근
 						1개월</a>
 					<!-- 검색 - 2개월 -->
-					<a href="javascript:search_order_history('two_month')" name="two_month"
-						class="badge rounded-pill btn mb-2 rounded-0 border-main active">최근
+					<a href="javascript:search_order_history('two_month')" style="color:black;"
+						class="badge rounded-pill btn mb-2 rounded-0 border-main ">최근
 						2개월</a>
 					<!-- 검색 - 3개월 -->
-					<a href="javascript:search_order_history('three_month')" name="three_month"
-						class="badge rounded-pill btn mb-2 rounded-0 border-main active" >최근
+					<a href="javascript:search_order_history('three_month')"style="color:black;"
+						class="badge rounded-pill btn mb-2 rounded-0 border-main" >최근
 						3개월 </a>
 					<!-- 검색 - 6개월 -->
-					<a href="javascript:search_order_history('six_month')" name="six_month"
-						class="badge rounded-pill btn mb-2 rounded-0 border-main active" >최근
+					<a href="javascript:search_order_history('six_month')" style="color:black;"
+						class="badge rounded-pill btn mb-2 rounded-0 border-main" >최근
 						6개월</a>
 
 					<!-- set된 조회할 기간 -->
@@ -75,23 +75,32 @@
 											<div
 												class="shadow-sm p-4 mt-3 rounded border border-light d-flex justify-content-between">
 												<div class="d-flex flex-column gap-4">
-													<p class="bg-primary-subtle text-emphasis-primary fw-bold small" style="Width:150px"> 주문상태 : 
-														<!-- 배송정보에 따른 표시 -->
-														<c:choose>
-															<c:when test="${item.delivery_state=='delivery_prepared' }">배송준비중</c:when>
-															<c:when test="${item.delivery_state=='delivering' }">배송중</c:when>
-															<c:when test="${item.delivery_state=='finished_delivering' }">배송완료</c:when>
-															<c:when test="${item.delivery_state=='cancel_order' }">주문취소</c:when>
-															<c:when test="${item.delivery_state=='returning_goods' }">반품중</c:when>
-															<c:when test="${item.delivery_state=='exchange_goods' }">교환중</c:when>
-														</c:choose>
-														<!-- 배송정보에 따른 표시 -->
-													</p>
+												
+													<div class="d-flex flex-row gap-4">
+														<p class="bg-primary-subtle text-emphasis-primary fw-bold small" style="Width:150px"> 주문상태 : 
+															<!-- 배송정보에 따른 표시 -->
+															<c:choose>
+																<c:when test="${item.delivery_state=='delivery_prepared' }">배송준비중</c:when>
+																<c:when test="${item.delivery_state=='delivering' }">배송중</c:when>
+																<c:when test="${item.delivery_state=='finished_delivering' }">배송완료</c:when>
+																<c:when test="${item.delivery_state=='cancel_order' }">주문취소</c:when>
+																<c:when test="${item.delivery_state=='returning_goods' }">반품중</c:when>
+																<c:when test="${item.delivery_state=='exchange_goods' }">교환중</c:when>
+															</c:choose>
+															<!-- 배송정보에 따른 표시 -->
+														</p>
+														
+														
+														<!-- 주문상세  -->
+															<a style="text-decoration: none; color: black;" class=" text-emphasis-primary fw-bold small" href="${contextPath}/mypage/payToOrderdetail.do?order_id=${item.order_id}">주문상세</a>
+														<!-- 주문상세  -->
+													</div>
+												
 
-													<c:forEach var="item2" items="${myOrderHistList}"
-														varStatus="j">
+													<c:forEach var="item2" items="${myOrderHistList}" varStatus="j">
 														<c:if test="${item.order_id ==item2.order_id}">
 															<div class="d-flex">
+															
 																<!-- 상품이미지 -->
 																<img
 																	src="${contextPath}/download.do?goods_id=${item2.goods_id}&fileName=${item2.goods_fileName}"

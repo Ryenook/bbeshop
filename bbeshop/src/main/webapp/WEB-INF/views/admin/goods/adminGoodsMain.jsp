@@ -14,27 +14,27 @@
 					<div>
 
 						<!-- 검색 - 오늘 -->
-						<a href="javascript:search_order_history('today')"
-							class="badge rounded-pill btn mb-2 rounded-0 border-main samll ">오늘</a>
+						<a href="javascript:search_order_history('today')" style="color:black;"
+							class="badge rounded-pill btn mb-2 rounded-0 border-main samll">오늘</a>
 
 						<!-- 검색 - 1개월 -->
-						<a href="javascript:search_order_history('one_month')"
-							class="badge rounded-pill btn mb-2 rounded-0 border-main samll active">최근
+						<a href="javascript:search_order_history('one_month')" style="color:black;"
+							class="badge rounded-pill btn mb-2 rounded-0 border-main samll active active">최근
 							1개월</a>
 
 						<!-- 검색 - 2개월 -->
-						<a href="javascript:search_order_history('two_month')"
-							class="badge rounded-pill btn mb-2 rounded-0 border-main samll two_month">최근
+						<a href="javascript:search_order_history('two_month')" style="color:black;"
+							class="badge rounded-pill btn mb-2 rounded-0 border-main samll two_month ">최근
 							2개월</a>
 
 						<!-- 검색 - 3개월 -->
-						<a href="javascript:search_order_history('three_month')"
-							class="badge rounded-pill btn mb-2 rounded-0 border-main samll three_month">최근
+						<a href="javascript:search_order_history('three_month')" style="color:black;"
+							class="badge rounded-pill btn mb-2 rounded-0 border-main samll three_month ">최근
 							3개월 </a>
 
 						<!-- 검색 - 6개월 -->
-						<a href="javascript:search_order_history('six_month')"
-							class="badge rounded-pill btn mb-2 rounded-0 border-main samll six_month">최근
+						<a href="javascript:search_order_history('six_month')" style="color:black;"
+							class="badge rounded-pill btn mb-2 rounded-0 border-main samll six_month ">최근
 							6개월</a>
 
 					</div>

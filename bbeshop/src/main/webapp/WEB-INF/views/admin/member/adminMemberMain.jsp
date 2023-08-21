@@ -19,29 +19,25 @@
 						<div>
 						
 						<!-- 검색 - 오늘 -->
-							<a href="javascript:search_order_history('today')"
-								class="badge rounded-pill btn mb-2 rounded-0 border-main samll ">오늘</a>
+							<a href="javascript:search_order_history('today')" style="color:black;"
+								class=" badge rounded-pill btn mb-2 rounded-0 border-main samlla ">오늘</a>
 							
 							<!-- 검색 - 1개월 -->
-							<a href="javascript:search_order_history('one_month')"
+							<a href="javascript:search_order_history('one_month')" style="color:black;"
 								name="one_month"
-								class="badge rounded-pill btn mb-2 rounded-0 border-main samll active">최근
-								1개월</a> 
+								class="badge rounded-pill btn mb-2 rounded-0 border-main samll active"> 최근 1개월</a> 
 								
-								<!-- 검색 - 2개월 -->
-								<a href="javascript:search_order_history('two_month')"
-								class="badge rounded-pill btn mb-2 rounded-0 border-main samll two_month">최근
-								2개월</a> 
+							<!-- 검색 - 2개월 -->
+							<a href="javascript:search_order_history('two_month')" style="color:black;"
+								class="badge rounded-pill btn mb-2 rounded-0 border-main samll two_month "> 최근2개월</a> 
 								
-								<!-- 검색 - 3개월 -->
-								<a href="javascript:search_order_history('three_month')"
-								class="badge rounded-pill btn mb-2 rounded-0 border-main samll three_month">최근
-								3개월 </a> 
+							<!-- 검색 - 3개월 -->
+							<a href="javascript:search_order_history('three_month')" style="color:black;"
+								class="badge rounded-pill btn mb-2 rounded-0 border-main samll three_month "> 최근3개월 </a> 
 								
 								<!-- 검색 - 6개월 -->
-								<a href="javascript:search_order_history('six_month')"
-								class="badge rounded-pill btn mb-2 rounded-0 border-main samll six_month">최근
-								6개월</a>
+								<a href="javascript:search_order_history('six_month')" style="color:black;"
+								class="badge rounded-pill btn mb-2 rounded-0 border-main samll six_month ">최근 6개월</a>
 
 						</div>
 					</div>
@@ -51,23 +47,17 @@
 					<div class="border-top border-main border-2 mt-2"></div>
 
 					<div class="table-responsive mt-4">
-						<table
-							class="table border-top mb-0 small fw-light border-bottom member_table">
+						<table class="table border-top mb-0 small fw-light border-bottom member_table">
 							<tbody>
 							
 							<!-- thead -->
 								<tr>
-									<td
-										class="table-light p-2 align-middle fw-bold border-end text-center bg-success bg-opacity-10"
+									<td class="table-light p-2 align-middle fw-bold border-end text-center bg-success bg-opacity-10"
 										style="width: 100px;">회원ID</td>
-									<td
-										class="table-light ps-4 align-middle fw-bold text-center border-end bg-success bg-opacity-10">회원정보</td>
-									<td
-										class="table-light ps-4 align-middle fw-bold text-center border-end bg-success bg-opacity-10">배송정보</td>
-									<td
-										class="table-light align-middle fw-bold text-center border-end bg-success bg-opacity-10">가입일</td>
-									<td class="table-light text-center px-4 align-middle bg-success bg-opacity-10"
-										style="width: 114px;">-</td>
+									<td class="table-light ps-4 align-middle fw-bold text-center border-end bg-success bg-opacity-10">회원정보</td>
+									<td class="table-light ps-4 align-middle fw-bold text-center border-end bg-success bg-opacity-10">배송정보</td>
+									<td class="table-light align-middle fw-bold text-center border-end bg-success bg-opacity-10">가입일</td>
+									<td class="table-light text-center px-4 align-middle bg-success bg-opacity-10" style="width: 114px;">-</td>
 								</tr>
 								<!-- thead -->
 								
@@ -104,34 +94,32 @@
 												
 												<!-- 회원이름 -->
 													<div class="d-flex mb-1 align-items-center">
-														<span style="width: 100px;" class="">이름</span> <input
-															class="form-control rounded-0 memberName" type="text"
+														<span style="width: 100px;" class="">이름</span> 
+														<input class="form-control rounded-0 memberName" type="text"
 															placeholder="이름" value="${item.memberName}" readonly>
 													</div>
 													<!-- 회원이름 -->
 													
 													<!-- 회원 id 2 -->
 													<div class="d-flex mb-1 align-items-center">
-														<span style="width: 100px;" class="">아이디</span> <input
-															class="form-control rounded-0 memberId" type="text"
-															name="memberId" placeholder="아이디"
-															value="${item.memberId}" readonly>
+														<span style="width: 100px;" class="">아이디</span> 
+														<input class="form-control rounded-0 memberId" type="text"
+															name="memberId" placeholder="아이디" value="${item.memberId}" readonly>
 													</div>
 													<!-- 회원 id 2 -->
 													
 													<!-- 비밀번호 -->
 													<div class="d-flex mb-1 align-items-center">
-														<span style="width: 100px;" class="">비밀번호</span> <input
-															class="form-control rounded-0 memberPw" type="text"
-															name="memberPw" placeholder="비밀번호"
-															value="${item.memberPw}" readonly>
+														<span style="width: 100px;" class="">비밀번호</span> 
+														<input class="form-control rounded-0 memberPw" type="text"
+															name="memberPw" placeholder="비밀번호" value="${item.memberPw}" readonly>
 													</div>
 													<!-- 비밀번호 -->
 													
 													<!-- 휴대전화 -->
 													<div class="d-flex mb-0 align-items-center">
-														<span style="width: 100px;" class="">휴대전화</span> <input
-															class="form-control rounded-0 hp1" type="text" name="hp1"
+														<span style="width: 100px;" class="">휴대전화</span> 
+														<input class="form-control rounded-0 hp1" type="text" name="hp1"
 															placeholder="010-0000-0000" value="${item.hp1}" readonly>
 													</div>
 													<!-- 휴대전화 -->
@@ -156,8 +144,8 @@
 													
 													<!-- 주소 -->
 													<div class="d-flex mb-1 align-items-center">
-														<span style="width: 100px;" class="">주소</span> <input
-															class="form-control rounded-0 member_address" type="text"
+														<span style="width: 100px;" class="">주소</span> 
+														<input class="form-control rounded-0 member_address" type="text"
 															placeholder="주소" name="member_address"
 															value="${item.member_address}" readonly>
 													</div>
@@ -165,8 +153,8 @@
 													
 													<!-- 상세주소 -->
 													<div class="d-flex mb-1 align-items-center">
-														<span style="width: 100px;" class="">상세주소</span> <input
-															class="form-control rounded-0 subaddress" type="text"
+														<span style="width: 100px;" class="">상세주소</span> 
+														<input class="form-control rounded-0 subaddress" type="text"
 															placeholder="상세주소" name="subaddress"
 															value="${item.subaddress}" readonly>
 													</div>
@@ -231,7 +219,7 @@
 
 <script>
 
-//버튼식 상품조회
+//버튼식  조회
 //onclick할때 같이 가져오는 fixedSearchPeriod값과함께 adminMemberMain 재요청
 //해당 값은 자바소스를 거쳐 지정된 기간에 맞는 정보만 select되어 뿌려진다.
 function search_order_history(fixedSearchPeriod) {
@@ -246,7 +234,7 @@ function search_order_history(fixedSearchPeriod) {
 	formObj.submit();
 }
 
-//버튼식 상품조회 badge url에 따른 style변경
+//버튼식 조회 badge url에 따른 style변경
 if (window.location.href.includes("fixedSearchPeriod")) {
 	const badges = document.querySelectorAll(".badge");
 	for (b of badges){ b.classList.remove("active");}

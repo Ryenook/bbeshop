@@ -87,6 +87,15 @@
 			where memberId=#{memberId}
     	]]>
 	</select>
+	
+		<!-- 주문상세 -->
+	<select id="payToOrderdetail" resultType="orderVO"
+		parameterType="String">
+	    <![CDATA[
+			select * from t_shopping_order
+			where order_id=#{order_id}
+    	]]>
+	</select>
 
 
 	<!-- 내 정보 수정 -->

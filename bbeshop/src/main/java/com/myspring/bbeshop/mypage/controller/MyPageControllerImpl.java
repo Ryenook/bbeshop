@@ -166,6 +166,26 @@ public class MyPageControllerImpl extends BaseController implements MyPageContro
 		return resEntity;
 	}
 
+	// 주문상세
+	@Override
+	@RequestMapping(value = "/payToOrderdetail.do", method = RequestMethod.GET)
+	public ModelAndView payToOrderdetail(@RequestParam ("order_id")  String order_id, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		
+		String viewName = (String) request.getAttribute("viewName");
+		System.out.println("payToOrderdetail의 viewName은 " + viewName);
+		ModelAndView mav = new ModelAndView(viewName);
+		HttpSession sessoin = request.getSession();
+		MemberVO orderer = (MemberVO) sessoin.getAttribute("memberInfo");
+		
+		List<OrderVO> detailList = myPageService.payToOrderdetail(order_id);
+		
+		mav.addObject("myOrderList", detailList);
+		mav.addObject("order", orderer);
+		
+		return mav;
+	}
+	
 	//회원탈퇴
 	@Override
 	@RequestMapping(value = "/deleteMember.do",method = RequestMethod.POST)
@@ -185,5 +205,6 @@ public class MyPageControllerImpl extends BaseController implements MyPageContro
 		return resEntity;
 	}
 
+	
 
 }

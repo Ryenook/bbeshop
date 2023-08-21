@@ -96,15 +96,15 @@
 					<p class="fs-5 fw-bold bg-success bg-opacity-10">배송지 정보</p>
 					<tr>
 						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >수령인 이름</td>
-						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderInfo.receiver_name }</td>
+						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderList[0].receiver_name }</td>
 					</tr>
 					<tr>
 						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >수령인 휴대폰 번호</td>
-						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderInfo.receiver_hp1 }</td>
+						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderList[0].receiver_hp1 }</td>
 					</tr>
 					<tr>
 						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >수령인 주소</td>
-						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderInfo.delivery_address }</td>
+						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderList[0].delivery_address }</td>
 					</tr>
 
 				</table>
@@ -116,15 +116,15 @@
 					<p class="fs-5 fw-bold bg-success bg-opacity-10">결제 정보</p>
 					<tr>
 						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >결제방법</td>
-						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderInfo.pay_method }</td>
+						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderList[0].pay_method }</td>
 					</tr>
 					<tr>
 						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >결제카드</td>
-						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderInfo.card_com_name }</td>
+						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderList[0].card_com_name }</td>
 					</tr>
 					<tr>
 						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >할부기간</td>
-						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderInfo.card_pay_month }</td>
+						<td class="table-light ps-4  align-middle border border-success border-opacity-50" style="width: 200px;" >${myOrderList[0].card_pay_month }</td>
 					</tr>
 
 				</table>
@@ -133,14 +133,11 @@
 				
 				<button
 					class="btn btn-lg border-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mt-0 mb-2 fs-6
-								bg-success bg-opacity-10"
-					onclick="location.href='${contextPath }/mypage/listMyOrderHistory.do'">주문목록
-					보기</button>
+								bg-success bg-opacity-10" onclick="location.href='${contextPath }/mypage/listMyOrderHistory.do'">
+								주문목록 보기</button>
 				<button
 					class="btn btn-lg border-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mt-0 mb-2 fs-6
-								bg-success bg-opacity-10"
-					onclick="location.href='${contextPath}/main/main.do'">쇼핑
-					계속하기</button>
+								bg-success bg-opacity-10" onclick="location.href='${contextPath}/main/main.do'">쇼핑 계속하기</button>
 			</div>
 		</div>
 	</div>

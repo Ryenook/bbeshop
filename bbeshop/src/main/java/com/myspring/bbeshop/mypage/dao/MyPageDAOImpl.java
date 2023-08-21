@@ -52,5 +52,10 @@ public class MyPageDAOImpl implements MyPageDAO {
 		sqlSession.delete("mapper.mypage.deleteMember",memberId);
 	}
 
+	@Override
+	public List<OrderVO> payToOrderdetail(String order_id) throws DataAccessException {
+		return sqlSession.selectList("mapper.mypage.payToOrderdetail",order_id);
+	}
+
 	
 }

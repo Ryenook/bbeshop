@@ -20,4 +20,13 @@
     	   <put-attribute name="mypage" value="/WEB-INF/views/mypage/layout.jsp" />
      	   <put-attribute name="body" value="/WEB-INF/views/mypage/myDetailInfo.jsp" />
 	</definition>
+	
+	
+	<definition name="/mypage/payToOrderdetail" extends="baseLayout">
+		   <put-attribute name="title" value="내 정보" />
+    	   <put-attribute name="mypage" value="/WEB-INF/views/mypage/layout.jsp" />
+     	   <put-attribute name="body" value="/WEB-INF/views/order/orderSuccessful.jsp" />
+	</definition>
+	
+	
 </tiles-definitions>

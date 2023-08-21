@@ -215,9 +215,9 @@
 			<div class="dropdown">
 				<a href="#"
 					class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle"
-					data-bs-toggle="dropdown" aria-expanded="false"> <img
-					src="${contextPath}/resources/image/logo/logo_ko.png"
-					alt="Bbeshop Logo" width="50" height="50" class="bi me-2">
+					data-bs-toggle="dropdown" aria-expanded="false"> 
+					<img src="${contextPath}/resources/image/logo/logo_ko.png"
+						alt="Bbeshop Logo" width="50" height="50" class="bi me-2">
 				</a>
 				<ul class="dropdown-menu text-small shadow">
 					<li><a class="dropdown-item small"
@@ -243,8 +243,8 @@
 					<div class="input-group">
 						<input type="text small" name="searchWord" id="searchWord" class="form-control " 
 								onKeyUp="keywordSearch()" placeholder="검색..." aria-label="Search" > 
-						<button class="btn btn-outline-secondary " type="submit" id="searchButton">
-							<img alt="검색" src="${contextPath}/resources/image/logo/logo_im.png"  style="width: 50px; height: 50px;" > 
+						<button class="btn" type="submit" id="searchButton">
+							<img alt="검색" src="${contextPath}/resources/image/bbeshop_seach.png"  > 
 						</button>
 					</div>
 					

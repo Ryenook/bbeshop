@@ -57,5 +57,12 @@ public class MyPageServiceImpl implements MyPageService{
 		myPageDAO.deleteMember(memberId);
 	}
 
+	@Override
+	public List<OrderVO> payToOrderdetail(String order_id) {
+		List<OrderVO> detailList = myPageDAO.payToOrderdetail(order_id);
+		System.out.println("▶▶▶  mypage DAO의 detailList" + detailList);
+		return detailList;
+	}
+
 
 }
