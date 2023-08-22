@@ -109,16 +109,16 @@
 			<!-- 상품이미지 -->
 			<div class="d-flex">
 				<!-- tab caller -->
-				<div class="list-group me-3" id="list-tab" role="tablist">
-					<a class="active mb-3 back_eee" id="detailThumb1"
+				<div class="list-group me-3 " id="list-tab" role="tablist">
+					<a class="active mb-3 back_eee border border-success p-2 border-opacity-10" id="detailThumb1"
 						data-bs-toggle="list" href="#detailThumb01" role="tab"
-						aria-controls="detailThumb01"> <img
-						src="${contextPath}/download.do?goods_id=${goods.goods_id}&fileName=${goods.goods_fileName}"
-						style="width: 50px"></a> <a class="mb-3 back_eee"
-						id="detailThumb2" data-bs-toggle="list" href="#detailThumb02"
-						role="tab" aria-controls="detailThumb02"> <img
-						src="${contextPath}/download.do?goods_id=${goods.goods_id}&fileName=${goods.goods_fileName}"
+						aria-controls="detailThumb01"> 
+						<img src="${contextPath}/download.do?goods_id=${goods.goods_id}&fileName=${goods.goods_fileName}"
 						style="width: 50px">
+					</a> 
+					<a class="mb-3 back_eee border border-success p-2 border-opacity-10" id="detailThumb2" data-bs-toggle="list" href="#detailThumb02"
+						role="tab" aria-controls="detailThumb02"> 
+						<img src="${contextPath}/resources/image/logo/logo_en.png" style="width: 50px" >
 					</a>
 				</div>
 				<!-- tab caller -->
@@ -132,9 +132,9 @@
 							src="${contextPath}/download.do?goods_id=${goods.goods_id}&fileName=${goods.goods_fileName}"
 							style="width: 410px">
 					</div>
-					<div class="tab-pane back_eee" id="detailThumb02" role="tabpanel"
-						aria-labelledby="detailThumb2">
-						<img src="${contextPath}/resources/image/logo_en.jpg">
+					<div class="tab-pane back_eee border border-success p-2 border-opacity-10" id="detailThumb02" role="tabpanel"
+						aria-labelledby="detailThumb2"  style="width: 410px;" align="center">
+						<img src="${contextPath}/resources/image/logo/logo_en.png" >
 					</div>
 				</div>
 				<!-- tab 본문 -->
@@ -208,7 +208,7 @@
 					</div>
 					<c:forEach var="image" items="${imageList }">
 						<div class="mb-5" align="center"
-							style="background:url(${contextPath}/resources/image/logo_en.jpg);background-size: cover;">
+							style="background:url(${contextPath}/resources/image/logo/logo_en.png);background-size: cover;">
 							<img class=""
 								src="${contextPath}/download.do?goods_id=${goods.goods_id}&fileName=${image.fileName}"
 								style="width: 800px;">
@@ -218,9 +218,9 @@
 				</div>
 
 				<!-- 상품/배송정보등의 외 정보 -->
-				<div class="tab-pane" id="detailInfo02" role="tabpanel"
+				<div class="tab-pane " align="center" id="detailInfo02" role="tabpanel"
 					aria-labelledby="detailInfo2">
-					<img src="${contextPath}/resources/img/goods/detailInfo.jpg">
+					<img src="${contextPath}/resources/image/detailInfo.png">
 				</div>
 				<!-- 상품/배송정보등의 외 정보 -->
 			</div>

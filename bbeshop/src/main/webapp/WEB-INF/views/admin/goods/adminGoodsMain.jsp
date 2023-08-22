@@ -139,7 +139,7 @@
 
 													<span>파일선택</span> <input name='main_image_fake'
 													class="file_fake form-control rounded-0" type="text"
-													placeholder="main.png or jpg로 변경후 업로드해주세요." readonly tabindex="-1">
+													placeholder="main" readonly tabindex="-1">
 
 												</label>
 												<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -161,7 +161,7 @@
 													
 													<input name='detail_image1_fake'
 													class="file_fake form-control rounded-0" type="text"
-													placeholder="detail1.png or jpg로 변경후 업로드해주세요." readonly
+													placeholder="detail1" readonly
 													tabindex="-1">
 												</label>
 												<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -183,7 +183,7 @@
 													
 													<input name='detail_image2_fake'
 													class="file_fake form-control rounded-0" type="text"
-													placeholder="detail2.png or jpg로 변경후 업로드해주세요." readonly
+													placeholder="detail2" readonly
 													tabindex="-1">
 												</label>
 												<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -299,7 +299,7 @@
 																<input
 																name='main_image_fake'
 																class="file_fake form-control rounded-0" type="text"
-																value="main.png" placeholder="main.png or jpg로 변경후 업로드해주세요."
+																 placeholder="main"
 																readonly tabindex="-1">
 															</label>
 															<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
@@ -317,15 +317,13 @@
 															<!-- filesToFackFilesInput, 본래 file input은 placeholder등을지정할 수 없는 이유로 hidden, -->
 															<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
 															<label onClick="filesToFackFilesInput(this)"
-																class="d-flex w-100 filesToFackFilesInput"> <input
-																name='detail_image1' class="file_real d-none"
-																type="file" style="opacity: .5"> <span>파일선택</span>
-
-																<input name='detail_image1_fake'
-																class="file_fake form-control rounded-0" type="text"
-																value="detail1.png"
-																placeholder="detail1.png or jpg로 변경후 업로드해주세요." readonly
-																tabindex="-1">
+																class="d-flex w-100 filesToFackFilesInput"> 
+																<input name='detail_image1' class="file_real d-none"
+																	type="file" style="opacity: .5"> 
+																<span>파일선택</span>
+																<input name='detail_image1_fake' 
+																	class="file_fake form-control rounded-0" type="text"
+																	placeholder="detail1" readonly tabindex="-1">
 															</label>
 															<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
 															<!-- 상세 이미지 업로드 -->
@@ -341,15 +339,13 @@
 															<!-- filesToFackFilesInput, 본래 file input은 placeholder등을지정할 수 없는 이유로 hidden, -->
 															<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
 															<label onClick="filesToFackFilesInput(this)"
-																class="d-flex w-100 filesToFackFilesInput"> <input
-																name='detail_image2' class="file_real d-none"
-																type="file" style="opacity: .5"> <span>파일선택</span>
-
+																class="d-flex w-100 filesToFackFilesInput"> 
+																<input name='detail_image2' class="file_real d-none"
+																type="file" style="opacity: .5"> 
+																<span>파일선택</span>
 																<input name='detail_image2_fake'
-																class="file_fake form-control rounded-0" type="text"
-																value="detail2.png"
-																placeholder="detail2.png or jpg로 변경후 업로드해주세요." readonly
-																tabindex="-1">
+																	class="file_fake form-control rounded-0" type="text"
+																 	placeholder="detail2" readonly tabindex="-1">
 															</label>
 															<!-- label로 연결된 input으로 file value값을 반영해 사용자에게 알림. -->
 															<!-- 상세 이미지 업로드 -->
@@ -396,7 +392,7 @@
 <script>
 
 //이미지 이름체크
-function filesToFackFilesInput(label){
+<%-- function filesToFackFilesInput(label){
 	let file_real = label.children[0];
 	let file_fake = label.children[2];
 	
@@ -406,9 +402,9 @@ function filesToFackFilesInput(label){
 		//name값에 따른 파일이름을 가져와 대조한다.
 		let files = this.files[0].name;
 		if(
-			(file_fake.name == "main_image_fake") && (files == "main.png" || files == "main.jpg")||
-		    (file_fake.name == "detail_image1_fake") && (files == "detail1.png" || files == "detail1.jpg" )||
-			(file_fake.name == "detail_image2_fake") && (files == "detail2.png" ||files == "detail2.jpg")){
+			(file_fake.name == "main_image_fake") && (files == "main.png")||
+		    (file_fake.name == "detail_image1_fake") && (files == "detail1.png" )||
+			(file_fake.name == "detail_image2_fake") && (files == "detail2.png")) {
 			//정해진 파일이름으로 업로드했을때 value값을 반영하고
 			file_fake.value = files;
 		}else{
@@ -417,6 +413,32 @@ function filesToFackFilesInput(label){
 			label.classList.add("warn");
 		}
 	});
+} --%>
+
+function filesToFackFilesInput(label) {
+    let file_real = label.children[0];
+    let file_fake = label.children[2];
+
+    // file input file_real이 change할때
+    file_real.addEventListener("change", function () {
+
+        // name값에 따른 파일이름과 확장명을 추출
+        let filename = this.files[0].name;
+        let fileExt = filename.split('.').pop().toLowerCase();
+
+        // 원하는 확장명들을 배열로 저장
+        let allowedExtensions = ["png", "jpg", "jpeg", "gif"];
+
+        // 허용하는 확장명들과 비교하여 허용 여부 확인
+        if (allowedExtensions.includes(fileExt)) {
+            // 허용하는 확장명으로 업로드했을때 value값을 반영하고
+            file_fake.value = filename;
+        } else {
+            // 그렇지 않은 경우 null을 반영 + label의 style을 바꾸어 경고한다.
+            file_fake.value = null;
+            label.classList.add("warn");
+        }
+    });
 }
 
 

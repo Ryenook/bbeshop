@@ -58,8 +58,12 @@ public class FileDownloadController {
 			String filePath=CURR_IMAGE_REPO_PATH+"\\"+goods_id+"\\"+fileName;
 			File image=new File(filePath);
 
+			String enfileName = URLEncoder.encode(fileName, "utf-8");
+			// 한글 Filter를 걸었으나 해더(저장공간같은것)에는 적용이 안되어 받아온 파일이름이 한글일 경우
+			// 다운로드가 안되고 깨진 문구로 출력되어 다시 한번 encoding을 해줌
+			
 			response.setHeader("Cache-Control","no-cache");
-			response.addHeader("Content-disposition", "attachment; fileName="+fileName);
+			response.addHeader("Content-disposition", "attachment; fileName="+enfileName);
 			FileInputStream in=new FileInputStream(image); 
 			byte[] buffer=new byte[1024*8];
 			while(true){
@@ -79,10 +83,32 @@ public class FileDownloadController {
 		OutputStream out = response.getOutputStream();
 		String filePath = CURR_IMAGE_REPO_PATH + "\\" + goods_id + "\\" + fileName;
 		File image = new File(filePath);
-
+		
 		if (image.exists()) {
-			Thumbnails.of(image).size(121, 154).outputFormat("*").toOutputStream(out);
-		}
+		    if (fileName.toLowerCase().endsWith(".png")) {
+		        Thumbnails.of(image).size(121, 154).outputFormat("png").toOutputStream(out);
+		    } else if (fileName.toLowerCase().endsWith(".jpg") || fileName.toLowerCase().endsWith(".jpeg")) {
+		        Thumbnails.of(image).size(121, 154).outputFormat("jpg").toOutputStream(out);
+		    } else  {
+		        Thumbnails.of(image).size(121, 154).outputFormat("gif").toOutputStream(out);
+		    }  
+		} 
+		
+
+
+
+
+
+//		
+//		if (image.exists()) {
+//			Thumbnails.of(image).size(121, 154).outputFormat("png").toOutputStream(out);				
+//		}else if (image.exists()) {
+//			Thumbnails.of(image).size(121, 154).outputFormat("jpg").toOutputStream(out);
+//		}else if (image.exists()) {
+//			Thumbnails.of(image).size(121, 154).outputFormat("jpeg").toOutputStream(out);
+//		}else {
+//			Thumbnails.of(image).size(121, 154).outputFormat("gif").toOutputStream(out);
+//		}
 
 		// 파일크기 설정
 		byte[] buffer = new byte[1024 * 8];
