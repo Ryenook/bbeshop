@@ -284,9 +284,8 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 				<!-- 전체선택 -->
 				<div class="text-end mt-4 mb-2">
 					<label> <input title="모든 상품을 결제상품으로 설정" type="checkbox"
-						name="checked_goods" class="all-deal-select"
-						onclick='selectAll(this)'> <span
-						class="small selectAllSpan">전체선택</span>
+						name="checked_goods" class="all-deal-select" onclick='selectAll(this)'> 
+						<span class="small selectAllSpan">전체선택</span>
 					</label>
 				</div>
 				<!-- 전체선택 -->

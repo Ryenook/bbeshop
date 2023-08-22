@@ -207,8 +207,7 @@
 							style="width: 800px">
 					</div>
 					<c:forEach var="image" items="${imageList }">
-						<div class="mb-5" align="center"
-							style="background:url(${contextPath}/resources/image/logo/logo_en.png);background-size: cover;">
+						<div class="mb-5" align="center">
 							<img class=""
 								src="${contextPath}/download.do?goods_id=${goods.goods_id}&fileName=${image.fileName}"
 								style="width: 800px;">

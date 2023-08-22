@@ -249,7 +249,7 @@
 
 										<div class="form-check col-3">
 											 <input class="form-check-input" type="radio" name="pay_method" id="pay_method" value="휴대폰결제">
-											 <label class="form-check-label" for="pay5"> 휴대폰결제 </label>
+											 <label class="form-check-label" > 휴대폰결제 </label>
 										</div>
 										
 										<div class="form-check col-3">
@@ -397,7 +397,7 @@
 										style="width: 200px; ">휴대폰 번호</td>
 									<td class="px-4">
 										<input class="form-control rounded-0   p-2 mb-2 bg-success bg-opacity-10"
-											type="text" id="pay_order_hp_num" name="pay_order_hp_num" value="" 
+											type="text" id="pay_order_hp_num" name="pay_order_hp_num" value="${memberInfo.hp1 }" 
 											placeholder="-없이 작성해주세요: 01000000000" style="width: 300px;">
 									</td>
 								</tr>
@@ -544,15 +544,15 @@ function fn_process_pay_order(){
 			
 			//수령자 이름
 			var i_receiver_name = document.createElement("input");
-			i_receiver_name = document.getElementById("receiver_name")
-			i_receiver_name.value = i_receiver_name.value;
+			i_receiver_name.name = "receiver_name";
+			i_receiver_name.value = document.getElementById("receiver_name").value;
 			console.log(i_receiver_name);
 			formObj.appendChild(i_receiver_name);
 			
 			//수령자 핸드폰
 			var i_receiver_hp1 = document.createElement("input");
-			i_receiver_hp1= document.getElementById("receiver_hp1");
-			i_receiver_hp1.value = i_receiver_hp1.value;
+			i_receiver_hp1.name = "receiver_hp1";
+			i_receiver_hp1.value = document.getElementById("receiver_hp1").value;
 			formObj.appendChild(i_receiver_hp1);
 			console.log(i_receiver_hp1);
 			
@@ -565,19 +565,12 @@ function fn_process_pay_order(){
 			
 			//결제방법
 			var i_pay_method = document.createElement("input");
-			i_pay_method= document.getElementById("pay_method");
-			i_pay_method.value= i_pay_method.value;
+			i_pay_method.name = "pay_method";
+			i_pay_method.value = pay_method();
 			formObj.appendChild(i_pay_method);
 			console.log(i_pay_method);
 			
-			//핸드폰결제
-		 	var i_pay_order_hp_num = document.createElement("input");
-			i_pay_order_hp_num.name="pay_order_hp_num"; 
-		    i_pay_order_hp_num.value=document.getElementById("pay_order_hp_num").value;
-		    console.log(i_pay_order_hp_num.value);
-		    formObj.appendChild(i_pay_order_hp_num); 
-		    console.log(i_pay_order_hp_num);
-		    
+			
 			//카드사선택
 			var i_card_com_name = document.createElement("input");
 			i_card_com_name.name="card_com_name";
@@ -592,7 +585,14 @@ function fn_process_pay_order(){
 			formObj.appendChild(i_card_pay_month);
 			console.log(i_card_pay_month);
 			
-			
+			//핸드폰결제
+		 	var i_pay_order_hp_num = document.createElement("input");
+		 	i_pay_order_hp_num.name="pay_order_hp_num"; 
+		    i_pay_order_hp_num.value=document.getElementById("pay_order_hp_num").value;
+		    console.log(i_pay_order_hp_num.value);
+		    formObj.appendChild(i_pay_order_hp_num); 
+		    console.log(i_pay_order_hp_num);
+		    
 			
 		    document.body.appendChild(formObj); 
 		    formObj.method="post";
